@@ -32,6 +32,16 @@ namespace Library.Config
 
         }
 
+        public static Readers FindReader(Readers readerFio)
+        {
+            var query = _sessionSQL.CreateQuery("from Readers r where r.lastName = :{0} and r.name = :{1} and r.{2} = :patronymic");
+            query.SetParameter(0, readerFio.lastName); //Возможно не правильно записал параметры
+            query.SetParameter(1, readerFio.name);
+            query.SetParameter(2, readerFio.patronymic);
+            var types = (List<Readers>)query.List<Readers>();
+            return types[0];
+        }
+
         public static void Close()
         {
             if (_sessionSQL.IsOpen)

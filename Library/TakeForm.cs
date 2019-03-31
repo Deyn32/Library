@@ -1,4 +1,6 @@
 ﻿using Library.Classes;
+using Library.Config;
+using Library.Entitys;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +29,31 @@ namespace Library
 
         private void btnSaveList_Click(object sender, EventArgs e)
         {
+            if (textFio.Text.Equals(""))
+            {
+                MessageBox.Show("Поле ФИО читателя не заполнено!");
+            }
+            String[] strs = textFio.Text.Split(' ');
+            if(strs.Length == 3)
+            {
+                Readers reader = new Readers();
+                reader.lastName = strs[0];
+                reader.name = strs[1];
+                reader.patronymic = strs[2];
+                //Тогда сохраняем
+                SaveTakeBooks(dgvListTakeBooks.Rows, reader);
+            }
+            else
+            {
+                MessageBox.Show("Не верно заполнено поле ФИО читателя!");
+            }
+        }
+
+        private void SaveTakeBooks(DataGridViewRowCollection rows, Readers reader)
+        {
+            SessionSQLService.Create();
+            Readers readers = SessionSQLService.FindReader(reader);
+            //Найти пользователя и взять id
 
         }
     }

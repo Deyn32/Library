@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Library" namespace="Library.Mappings">
   <class name="Library.Entitys.Books" table="Books" lazy="true">
-    <id name="ID" column="ID" type="System.Int64">
+    <id name="id" column="ID" type="System.Int64">
       <generator class="identity"/>
     </id>
     <property name="Author" column="Author" type="System.String" not-null="false"/>
@@ -9,4 +9,31 @@
     <property name="ISBN" column="ISBN" type="System.String" not-null="true"/>
     <property name="Condition" column="Condition" type="System.Boolean" not-null="true"/>
   </class>
+  
+  <class name="Library.Entitys.Readers" table="Readers" lazy="true">
+    <id name="id" column="ID" type="System.Int64">
+      <generator class="identity"/>
+    </id>
+    <property name="name" column="Name" type="System.String" not-null="false"/>
+    <property name="lastName" column="LastName" type="System.String" not-null="false"/>
+    <property name="patronymic" column="Patronymic" type="System.String" not-null="false"/>
+    <property name="phone" column="Phone" type="System.String" not-null="false"/>
+    <property name="dateOfTaking" column="DateOfTaking" type="System.DateTime" not-null="false"/>
+  </class>
+  
+  <class name="Library.Entitys.BookOfHand" table="Books_of_Hand" lazy="true">
+    <id name="id" column="ID" type="System.Int64">
+      <generator class="identity"/>
+    </id>
+    <property name="reader_id" column="Reader_id" type="System.Int64" not-null="false"/>
+    <property name="book_id" column="Book_id" type="System.Int64" not-null="false"/>
+  </class>
+  
+  <class name="Library.Entitys.ListOfOrders" table="List_of_orders" lazy="true">
+    <id name="id" column="ID" type="System.Int64">
+      <generator class="identity"/>
+    </id>
+    <property name="book_id" column="Book_id" type="System.Int64" not-null="true"/>
+  </class>
+
 </hibernate-mapping>

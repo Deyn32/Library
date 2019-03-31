@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textFio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveList = new System.Windows.Forms.Button();
             this.dgvListTakeBooks = new System.Windows.Forms.DataGridView();
@@ -37,12 +37,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListTakeBooks)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textFio
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 26);
-            this.textBox1.TabIndex = 0;
+            this.textFio.Location = new System.Drawing.Point(176, 42);
+            this.textFio.Name = "textFio";
+            this.textFio.Size = new System.Drawing.Size(255, 26);
+            this.textFio.TabIndex = 0;
             // 
             // label1
             // 
@@ -100,7 +100,7 @@
             this.Controls.Add(this.dgvListTakeBooks);
             this.Controls.Add(this.btnSaveList);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textFio);
             this.Name = "TakeForm";
             this.Text = "Взять книги";
             this.Load += new System.EventHandler(this.TakeForm_Load);
@@ -112,7 +112,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textFio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSaveList;
         private System.Windows.Forms.DataGridView dgvListTakeBooks;
