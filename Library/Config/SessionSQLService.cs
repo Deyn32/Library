@@ -34,12 +34,12 @@ namespace Library.Config
 
         public static Readers FindReader(Readers readerFio)
         {
-            var query = _sessionSQL.CreateQuery("from Readers r where r.lastName = :{0} and r.name = :{1} and r.{2} = :patronymic");
-            query.SetParameter(0, readerFio.lastName); //Возможно не правильно записал параметры
-            query.SetParameter(1, readerFio.name);
-            query.SetParameter(2, readerFio.patronymic);
+            var query = _sessionSQL.CreateQuery("from Readers r where r.lastName = :lastName and r.name = :name and r.patronymic = :patronymic");
+            query.SetParameter("lastName", readerFio.lastName); 
+            query.SetParameter("name", readerFio.name);
+            query.SetParameter("patronymic", readerFio.patronymic);
             var types = (List<Readers>)query.List<Readers>();
-            return types[0];
+            return types.Count > 0 ? types[0] : null;
         }
 
         public static void Close()
