@@ -54,6 +54,13 @@ namespace Library
             SessionSQLService.Create();
             Readers readers = SessionSQLService.FindReader(reader);
             //Найти пользователя и взять id
+            foreach(DataGridViewRow row in rows)
+            {
+                BookOfHand bookOfHand = new BookOfHand();
+                bookOfHand.reader_id = readers.id;
+
+            }
+            
 
         }
     }
