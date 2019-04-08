@@ -35,8 +35,9 @@ namespace Library.Config
         public static Readers FindReader(Readers readerFio)
         {
             return _sessionSQL.QueryOver<Readers>().Where(n => n.lastName == readerFio.lastName)
-                                                         .Where(n => n.name == readerFio.name)
-                                                         .Where(n => n.patronymic == readerFio.patronymic).List().FirstOrDefault();
+                                                   .Where(n => n.name == readerFio.name)
+                                                   .Where(n => n.patronymic == readerFio.patronymic)
+                                                   .List().FirstOrDefault();
         }
 
         public static void Close()

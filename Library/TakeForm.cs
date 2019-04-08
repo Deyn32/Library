@@ -53,15 +53,14 @@ namespace Library
         {
             SessionSQLService.Create();
             Readers readers = SessionSQLService.FindReader(reader);
+            List<BookOfHand> dgvListTakeBooks = new List<BookOfHand>();
             //Найти пользователя и взять id
             foreach(DataGridViewRow row in rows)
             {
                 BookOfHand bookOfHand = new BookOfHand();
                 bookOfHand.reader_id = readers.id;
-
+                //Тут нужен id книги (добавить невидимые колонки в двух таблицах)
             }
-            
-
         }
     }
 }
