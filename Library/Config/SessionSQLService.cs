@@ -34,12 +34,10 @@ namespace Library.Config
 
         public static Readers FindReader(Readers readerFio)
         {
-            var query = _sessionSQL.CreateQuery("from Readers r where r.lastName = :lastName and r.name = :name and r.patronymic = :patronymic");
-            query.SetParameter("lastName", readerFio.lastName); 
-            query.SetParameter("name", readerFio.name);
-            query.SetParameter("patronymic", readerFio.patronymic);
-            var types = (List<Readers>)query.List<Readers>();
-            return types.Count > 0 ? types[0] : null;
+            return _sessionSQL.QueryOver<Readers>().Where(n => n.lastName == readerFio.lastName)
+                                                   .Where(n => n.name == readerFio.name)
+                                                   .Where(n => n.patronymic == readerFio.patronymic)
+                                                   .List().FirstOrDefault();
         }
 
         public static void Close()
