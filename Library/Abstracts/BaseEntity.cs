@@ -8,6 +8,6 @@ namespace Library.Abstracts
 {
     public abstract class BaseEntity
     {
-        public virtual Int64 id { get; protected set; }
+        public virtual Int64 id { get; set; }
     }
 }

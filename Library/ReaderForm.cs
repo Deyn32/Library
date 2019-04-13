@@ -63,7 +63,8 @@ namespace Library
 
         private void btnPass_Click(object sender, EventArgs e)
         {
-
+            ReturnBooksForm returnBooksForm = new ReturnBooksForm();
+            returnBooksForm.Show();
         }
     }
 }

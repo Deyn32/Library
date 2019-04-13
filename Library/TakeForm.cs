@@ -25,15 +25,22 @@ namespace Library
         private void TakeForm_Load(object sender, EventArgs e)
         {
             dgvListTakeBooks.DataSource = dtBooks;
+            createCbFIO();
+        }
+
+        private void createCbFIO()
+        {
+            cbFIO.Items.AddRange(CreateService.CreateListBox());
+            
         }
 
         private void btnSaveList_Click(object sender, EventArgs e)
         {
-            if (textFio.Text.Equals(""))
+            if (cbFIO.Text.Equals(""))
             {
                 MessageBox.Show("Поле ФИО читателя не заполнено!");
             }
-            String[] strs = textFio.Text.Split(' ');
+            String[] strs = cbFIO.Text.Split(' ');
             if(strs.Length == 3)
             {
                 Readers reader = new Readers();
@@ -60,7 +67,13 @@ namespace Library
                 BookOfHand bookOfHand = new BookOfHand();
                 bookOfHand.reader_id = readers.id;
                 //Тут нужен id книги (добавить невидимые колонки в двух таблицах)
+                bookOfHand.book_id = (long)row.Cells["colId"].Value;
+                if(SessionSQLService.sessionSQL.IsOpen)
+                    SessionSQLService.sessionSQL.Save(bookOfHand);
             }
+            SessionSQLService.Close();
+            MessageBox.Show("Сохранение прошло успешно!");
+            this.Close();
         }
     }
 }

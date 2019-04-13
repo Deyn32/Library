@@ -19,6 +19,7 @@ namespace Library.Services
                 TableBooksBinding tbb = new TableBooksBinding();
                 tbb.Author = b.Author;
                 tbb.Name = b.Name;
+                tbb.id = b.id;
                 bindings.Add(tbb);
             }
             return bindings;

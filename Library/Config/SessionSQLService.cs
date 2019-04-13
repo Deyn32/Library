@@ -40,6 +40,29 @@ namespace Library.Config
                                                    .List().FirstOrDefault();
         }
 
+        public static List<Readers> FindAll()
+        {
+            return (List<Readers>)_sessionSQL.QueryOver<Readers>().List();
+        }
+
+        public static List<BookOfHand> findBooksOfHand(long idReader)
+        {
+            return (List<BookOfHand>)_sessionSQL.QueryOver<BookOfHand>().Where(n => n.reader_id == idReader).List();
+        }
+
+        public static Books findBook(long id)
+        {
+            return _sessionSQL.QueryOver<Books>().Where(n => n.id == id).List().FirstOrDefault();
+        }
+
+        public static void DeleteBook(long idBook, long idReader)
+        {
+            BookOfHand bookOfHand = _sessionSQL.QueryOver<BookOfHand>().Where(n => n.book_id == idBook)
+                                                                       .Where(n => n.reader_id == idReader)
+                                                                       .List().FirstOrDefault();
+            _sessionSQL.Delete(bookOfHand);
+        }
+
         public static void Close()
         {
             if (_sessionSQL.IsOpen)

@@ -32,6 +32,7 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.dgvListBooks = new System.Windows.Forms.DataGridView();
             this.colAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTake = new System.Windows.Forms.Button();
             this.btnPass = new System.Windows.Forms.Button();
@@ -59,12 +60,14 @@
             // 
             // dgvListBooks
             // 
+            this.dgvListBooks.AllowUserToAddRows = false;
             this.dgvListBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colAuthor,
+            this.colId,
             this.colName});
             this.dgvListBooks.Location = new System.Drawing.Point(-3, 106);
             this.dgvListBooks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -78,7 +81,16 @@
             this.colAuthor.DataPropertyName = "Author";
             this.colAuthor.HeaderText = "Автор";
             this.colAuthor.Name = "colAuthor";
+            this.colAuthor.ReadOnly = true;
             this.colAuthor.Width = 300;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "id";
+            this.colId.HeaderText = "Column1";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
             // 
             // colName
             // 
@@ -86,6 +98,7 @@
             this.colName.DataPropertyName = "Name";
             this.colName.HeaderText = "Название";
             this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
             // 
             // btnTake
             // 
@@ -144,10 +157,11 @@
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.DataGridView dgvListBooks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.Button btnTake;
         private System.Windows.Forms.Button btnPass;
         private System.Windows.Forms.Button btnRefrash;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
     }
 }

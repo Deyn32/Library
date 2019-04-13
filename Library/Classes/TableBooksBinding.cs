@@ -10,5 +10,7 @@ namespace Library.Classes
     {
         public String Author { get; set; }
         public String Name { get; set; }
+
+        public long id { get; set; }
     }
 }

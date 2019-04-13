@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Classes\TableBooksBinding.cs" />
     <Compile Include="Config\SessionSQLService.cs" />
+    <Compile Include="CreateService.cs" />
     <Compile Include="Domain.cs" />
     <Compile Include="Entitys\BookOfHand.cs" />
     <Compile Include="Entitys\Books.cs" />
@@ -91,6 +92,12 @@
     </Compile>
     <Compile Include="ReaderForm.Designer.cs">
       <DependentUpon>ReaderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnBooksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnBooksForm.Designer.cs">
+      <DependentUpon>ReturnBooksForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\BindingService.cs" />
     <Compile Include="SOKForm.cs">
@@ -122,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="ReaderForm.resx">
       <DependentUpon>ReaderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnBooksForm.resx">
+      <DependentUpon>ReturnBooksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SOKForm.resx">
       <DependentUpon>SOKForm.cs</DependentUpon>
