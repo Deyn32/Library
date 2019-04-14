@@ -29,6 +29,11 @@ namespace Library
 
         private void BtnRefrash_Click(object sender, EventArgs e)
         {
+            Refrash();
+        }
+
+        private void Refrash()
+        {
             SessionSQLService.Create();
             Readers reader = new Readers();
             String[] str = cbFio.Text.Split(' ');
@@ -38,7 +43,7 @@ namespace Library
             reader = SessionSQLService.FindReader(reader);
             List<BookOfHand> bookOfHands = SessionSQLService.findBooksOfHand(reader.id);
             List<Books> listBooks = new List<Books>();
-            foreach(var boh in bookOfHands)
+            foreach (var boh in bookOfHands)
             {
                 listBooks.Add(SessionSQLService.findBook(boh.book_id));
             }
@@ -49,13 +54,26 @@ namespace Library
 
         private void BtnReturnBooks_Click(object sender, EventArgs e)
         {
+            DeleteBooks();
+            Refrash();
+        }
+
+        private void DeleteBooks()
+        {
             var rows = dgvReturnBooks.SelectedRows;
+            String[] strs = cbFio.Text.Split(' ');
             SessionSQLService.Create();
-            Readers reader = 
-            foreach(var row in rows)
+            Readers reader = new Readers();
+            reader.lastName = strs[0];
+            reader.name = strs[1];
+            reader.patronymic = strs[2];
+            reader = SessionSQLService.FindReader(reader);
+            foreach (DataGridViewRow row in rows)
             {
-                
+                SessionSQLService.DeleteBook((long)row.Cells["colId"].Value, reader.id);
             }
+            SessionSQLService.Close();
+            MessageBox.Show("Книги возвращены");
         }
     }
 }
