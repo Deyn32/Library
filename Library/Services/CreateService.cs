@@ -23,5 +23,18 @@ namespace Library
             }
             return result;
         }
+
+        public static Readers CreateReaders(String text)
+        {
+            SessionSQLService.Create();
+            Readers reader = new Readers();
+            String[] str = text.Split(' ');
+            reader.lastName = str[0];
+            reader.name = str[1];
+            reader.patronymic = str[2];
+            reader = SessionSQLService.FindReader(reader);
+            SessionSQLService.Close();
+            return reader;
+        }
     }
 }

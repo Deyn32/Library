@@ -40,32 +40,20 @@ namespace Library
             {
                 MessageBox.Show("Поле ФИО читателя не заполнено!");
             }
-            String[] strs = cbFIO.Text.Split(' ');
-            if(strs.Length == 3)
-            {
-                Readers reader = new Readers();
-                reader.lastName = strs[0];
-                reader.name = strs[1];
-                reader.patronymic = strs[2];
-                //Тогда сохраняем
-                SaveTakeBooks(dgvListTakeBooks.Rows, reader);
-            }
-            else
-            {
-                MessageBox.Show("Не верно заполнено поле ФИО читателя!");
-            }
+            Readers reader = CreateService.CreateReaders(cbFIO.Text);
+            //Тогда сохраняем
+            SaveTakeBooks(dgvListTakeBooks.Rows, reader);
         }
 
         private void SaveTakeBooks(DataGridViewRowCollection rows, Readers reader)
         {
             SessionSQLService.Create();
-            Readers readers = SessionSQLService.FindReader(reader);
             List<BookOfHand> dgvListTakeBooks = new List<BookOfHand>();
             //Найти пользователя и взять id
             foreach(DataGridViewRow row in rows)
             {
                 BookOfHand bookOfHand = new BookOfHand();
-                bookOfHand.reader_id = readers.id;
+                bookOfHand.reader_id = reader.id;
                 //Тут нужен id книги (добавить невидимые колонки в двух таблицах)
                 bookOfHand.book_id = (long)row.Cells["colId"].Value;
                 if(SessionSQLService.sessionSQL.IsOpen)

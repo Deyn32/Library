@@ -35,12 +35,7 @@ namespace Library
         private void Refrash()
         {
             SessionSQLService.Create();
-            Readers reader = new Readers();
-            String[] str = cbFio.Text.Split(' ');
-            reader.lastName = str[0];
-            reader.name = str[1];
-            reader.patronymic = str[2];
-            reader = SessionSQLService.FindReader(reader);
+            Readers reader = CreateService.CreateReaders(cbFio.Text);
             List<BookOfHand> bookOfHands = SessionSQLService.findBooksOfHand(reader.id);
             List<Books> listBooks = new List<Books>();
             foreach (var boh in bookOfHands)
@@ -61,13 +56,8 @@ namespace Library
         private void DeleteBooks()
         {
             var rows = dgvReturnBooks.SelectedRows;
-            String[] strs = cbFio.Text.Split(' ');
             SessionSQLService.Create();
-            Readers reader = new Readers();
-            reader.lastName = strs[0];
-            reader.name = strs[1];
-            reader.patronymic = strs[2];
-            reader = SessionSQLService.FindReader(reader);
+            Readers reader = CreateService.CreateReaders(cbFio.Text);
             foreach (DataGridViewRow row in rows)
             {
                 SessionSQLService.DeleteBook((long)row.Cells["colId"].Value, reader.id);
