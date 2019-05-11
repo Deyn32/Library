@@ -22,5 +22,17 @@ namespace Library
             Form frm = Application.OpenForms[0];
             frm.Show();
         }
+
+        private void tsmiHandOverBook_Click(object sender, EventArgs e)
+        {
+            HandOverForm hof = new HandOverForm();
+            hof.Show();
+        }
+
+        private void tsmiConditionBook_Click(object sender, EventArgs e)
+        {
+            ConditionBookForm cbf = new ConditionBookForm();
+            cbf.Show();
+        }
     }
 }

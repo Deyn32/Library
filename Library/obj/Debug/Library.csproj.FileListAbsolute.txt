@@ -53,3 +53,4 @@ E:\Old_Comp\Library\Library\obj\Debug\Library.csproj.CopyComplete
 E:\Old_Comp\Library\Library\obj\Debug\Library.exe
 E:\Old_Comp\Library\Library\obj\Debug\Library.pdb
 C:\Users\User\source\repos\Library\Library\obj\Debug\Library.ReturnBooksForm.resources
+C:\Users\User\source\repos\Library\Library\obj\Debug\Library.HandOverForm.resources

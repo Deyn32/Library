@@ -72,7 +72,19 @@
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\TableBooksBinding.cs" />
+    <Compile Include="ConditionBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConditionBookForm.Designer.cs">
+      <DependentUpon>ConditionBookForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Config\SessionSQLService.cs" />
+    <Compile Include="HandOverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandOverForm.Designer.cs">
+      <DependentUpon>HandOverForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\CreateService.cs" />
     <Compile Include="Domain.cs" />
     <Compile Include="Entitys\BookOfHand.cs" />
@@ -114,6 +126,12 @@
     </Compile>
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConditionBookForm.resx">
+      <DependentUpon>ConditionBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandOverForm.resx">
+      <DependentUpon>HandOverForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LibrarianForm.resx">
       <DependentUpon>LibrarianForm.cs</DependentUpon>
