@@ -56,14 +56,17 @@ namespace Library
         private void DeleteBooks()
         {
             var rows = dgvReturnBooks.SelectedRows;
-            SessionSQLService.Create();
             Readers reader = CreateService.CreateReaders(cbFio.Text);
             foreach (DataGridViewRow row in rows)
             {
                 SessionSQLService.DeleteBook((long)row.Cells["colId"].Value, reader.id);
             }
-            SessionSQLService.Close();
             MessageBox.Show("Книги возвращены");
+        }
+
+        private void cbFio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Refrash();
         }
     }
 }

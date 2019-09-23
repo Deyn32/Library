@@ -12,9 +12,7 @@ namespace Library
     {
         public static String[] CreateListBox()
         {
-            SessionSQLService.Create();
             List<Readers> readers = SessionSQLService.FindAll();
-            SessionSQLService.Close();
             String[] result = new String[readers.Count];
             for (int i = 0; i < readers.Count; i++)
             {
@@ -26,14 +24,12 @@ namespace Library
 
         public static Readers CreateReaders(String text)
         {
-            SessionSQLService.Create();
             Readers reader = new Readers();
             String[] str = text.Split(' ');
             reader.lastName = str[0];
             reader.name = str[1];
             reader.patronymic = str[2];
             reader = SessionSQLService.FindReader(reader);
-            SessionSQLService.Close();
             return reader;
         }
     }

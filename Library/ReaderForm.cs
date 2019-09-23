@@ -31,10 +31,8 @@ namespace Library
 
         private void StartForm()
         {
-            SessionSQLService.Create();
             this.WindowState = FormWindowState.Maximized;
             List<Books> books = SessionSQLService.FindAllBooks();
-            SessionSQLService.Close();
             dtBooks = BindingService.BindingReaderTable(books);
             dgvListBooks.DataSource = dtBooks;
         }

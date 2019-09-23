@@ -60,14 +60,14 @@
             // tsmiHandOverBook
             // 
             this.tsmiHandOverBook.Name = "tsmiHandOverBook";
-            this.tsmiHandOverBook.Size = new System.Drawing.Size(252, 30);
+            this.tsmiHandOverBook.Size = new System.Drawing.Size(223, 30);
             this.tsmiHandOverBook.Text = "Сдача книг";
             this.tsmiHandOverBook.Click += new System.EventHandler(this.tsmiHandOverBook_Click);
             // 
             // tsmiConditionBook
             // 
             this.tsmiConditionBook.Name = "tsmiConditionBook";
-            this.tsmiConditionBook.Size = new System.Drawing.Size(252, 30);
+            this.tsmiConditionBook.Size = new System.Drawing.Size(223, 30);
             this.tsmiConditionBook.Text = "Состояние книг";
             this.tsmiConditionBook.Click += new System.EventHandler(this.tsmiConditionBook_Click);
             // 
@@ -86,7 +86,7 @@
             this.MainMenuStrip = this.menuLibraryan;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LibrarianForm";
-            this.Text = "LibrarianForm";
+            this.Text = "Библиотека";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LibrarianForm_FormClosing);
             this.menuLibraryan.ResumeLayout(false);
             this.menuLibraryan.PerformLayout();

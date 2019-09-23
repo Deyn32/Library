@@ -78,7 +78,6 @@
     <Compile Include="ConditionBookForm.Designer.cs">
       <DependentUpon>ConditionBookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Config\SessionSQLService.cs" />
     <Compile Include="HandOverForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,7 +85,6 @@
       <DependentUpon>HandOverForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\CreateService.cs" />
-    <Compile Include="Domain.cs" />
     <Compile Include="Entitys\BookOfHand.cs" />
     <Compile Include="Entitys\Books.cs" />
     <Compile Include="Entitys\ListOfOrders.cs" />
@@ -112,6 +110,7 @@
       <DependentUpon>ReturnBooksForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\BindingService.cs" />
+    <Compile Include="Services\SessionSQLService.cs" />
     <Compile Include="SOKForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,15 +171,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Config\NHiberConfig.cfg.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Mappings\mappingsSqlServer.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{fa1b4acc-cd40-4c12-b2e3-c347a51c2bc0}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

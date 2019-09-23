@@ -32,10 +32,10 @@
             this.cbFio = new System.Windows.Forms.ComboBox();
             this.btnReturnBooks = new System.Windows.Forms.Button();
             this.dgvReturnBooks = new System.Windows.Forms.DataGridView();
-            this.btnRefrash = new System.Windows.Forms.Button();
             this.colAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefrash = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnBooks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             this.cbFio.Name = "cbFio";
             this.cbFio.Size = new System.Drawing.Size(338, 28);
             this.cbFio.TabIndex = 1;
+            this.cbFio.SelectedIndexChanged += new System.EventHandler(this.cbFio_SelectedIndexChanged);
             // 
             // btnReturnBooks
             // 
@@ -83,16 +84,6 @@
             this.dgvReturnBooks.Size = new System.Drawing.Size(795, 351);
             this.dgvReturnBooks.TabIndex = 3;
             // 
-            // btnRefrash
-            // 
-            this.btnRefrash.Location = new System.Drawing.Point(476, 40);
-            this.btnRefrash.Name = "btnRefrash";
-            this.btnRefrash.Size = new System.Drawing.Size(112, 34);
-            this.btnRefrash.TabIndex = 4;
-            this.btnRefrash.Text = "Обновить";
-            this.btnRefrash.UseVisualStyleBackColor = true;
-            this.btnRefrash.Click += new System.EventHandler(this.BtnRefrash_Click);
-            // 
             // colAuthor
             // 
             this.colAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -114,6 +105,16 @@
             this.colId.HeaderText = "Column1";
             this.colId.Name = "colId";
             this.colId.Visible = false;
+            // 
+            // btnRefrash
+            // 
+            this.btnRefrash.Location = new System.Drawing.Point(476, 40);
+            this.btnRefrash.Name = "btnRefrash";
+            this.btnRefrash.Size = new System.Drawing.Size(112, 34);
+            this.btnRefrash.TabIndex = 4;
+            this.btnRefrash.Text = "Обновить";
+            this.btnRefrash.UseVisualStyleBackColor = true;
+            this.btnRefrash.Click += new System.EventHandler(this.BtnRefrash_Click);
             // 
             // ReturnBooksForm
             // 

@@ -54,3 +54,6 @@ E:\Old_Comp\Library\Library\obj\Debug\Library.exe
 E:\Old_Comp\Library\Library\obj\Debug\Library.pdb
 C:\Users\User\source\repos\Library\Library\obj\Debug\Library.ReturnBooksForm.resources
 C:\Users\User\source\repos\Library\Library\obj\Debug\Library.HandOverForm.resources
+C:\Users\User\source\repos\Library\Library\obj\Debug\Library.ConditionBookForm.resources
+C:\Users\User\source\repos\Library\Library\bin\Debug\Domain.dll
+C:\Users\User\source\repos\Library\Library\bin\Debug\Domain.pdb
