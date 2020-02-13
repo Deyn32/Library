@@ -48,3 +48,5 @@
 *.ide-shm
 *.ide
 *.lock
+/Library/bin
+/Library/obj
