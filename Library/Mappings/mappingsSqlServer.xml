@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Library" namespace="Library.Mappings">
-  <class name="Library.Entitys.Books" table="Books" lazy="true">
+  <class name="Library.Entitys.Book" table="Books" lazy="true">
     <id name="id" column="ID" type="System.Int64">
       <generator class="identity"/>
     </id>

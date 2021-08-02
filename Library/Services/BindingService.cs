@@ -11,10 +11,10 @@ namespace Library.Services
 {
     public static class BindingService
     {
-        public static BindingList<TableBooksBinding> BindingReaderTable(List<Books> books)
+        public static BindingList<TableBooksBinding> BindingReaderTable(List<Book> books)
         {
             BindingList<TableBooksBinding> bindings = new BindingList<TableBooksBinding>();
-            foreach(Books b in books)
+            foreach(Book b in books)
             {
                 TableBooksBinding tbb = new TableBooksBinding();
                 tbb.Author = b.Author;

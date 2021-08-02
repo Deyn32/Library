@@ -75,7 +75,7 @@
     <Compile Include="Config\SessionSQLService.cs" />
     <Compile Include="Domain.cs" />
     <Compile Include="Entitys\BookOfHand.cs" />
-    <Compile Include="Entitys\Books.cs" />
+    <Compile Include="Entitys\Book.cs" />
     <Compile Include="Entitys\ListOfOrders.cs" />
     <Compile Include="Entitys\Readers.cs" />
     <Compile Include="Forms\LibrarianForm.cs">

@@ -24,10 +24,10 @@ namespace Library.Config
             _sessionSQL = domain.currentSession;
         }
 
-        public static List<Books> FindAllBooks()
+        public static List<Book> FindAllBooks()
         {
             
-            return (List<Books>) _sessionSQL.QueryOver<Books>().Where(b => b.Condition == false).List();
+            return (List<Book>) _sessionSQL.QueryOver<Book>().Where(b => b.Condition == false).List();
 
         }
 
@@ -39,7 +39,7 @@ namespace Library.Config
                                                    .List().FirstOrDefault();
         }
 
-        public static void DeleteBook(Books book)
+        public static void DeleteBook(Book book)
         {
             _sessionSQL.Delete(book);
         }
