@@ -39,6 +39,11 @@ namespace Library.Config
                                                    .List().FirstOrDefault();
         }
 
+        public static void DeleteBook(Books book)
+        {
+            _sessionSQL.Delete(book);
+        }
+
         public static void Close()
         {
             if (_sessionSQL.IsOpen)
