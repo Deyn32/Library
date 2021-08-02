@@ -26,9 +26,8 @@ namespace Library.Config
 
         public static List<Books> FindAllBooks()
         {
-            var query = _sessionSQL.CreateQuery("from Books b where b.Condition = 0");
-            var types = (List<Books>)query.List<Books>();
-            return types;
+            
+            return (List<Books>) _sessionSQL.QueryOver<Books>().Where(b => b.Condition == false).List();
 
         }
 
