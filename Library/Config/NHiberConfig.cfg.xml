@@ -4,7 +4,8 @@
     <property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
     <property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
     <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
-    <property name="connection.connection_string">Server=DESKTOP-EKQ4FRO\SQLEXPRESS;Initial Catalog=Library;User Id=sa;Password=mzexot</property>
+    <property name="connection.connection_string">Server=LAPTOP-4Q80DJJI\DEYNSQLSERVER;Initial Catalog=Library;User Id=sa;Password=mzexot32</property>
+	<property name="hbm2ddl.auto">update</property>
     <mapping file="Mappings/mappingsSqlServer.xml"/>
   </session-factory>
 </hibernate-configuration>
